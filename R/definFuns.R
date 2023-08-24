@@ -54,3 +54,17 @@ niceT <- function(tab,rowVar="",colVar="",title="",sn="")
     tab_header(title=title) %>%
     tab_source_note(source_note = sn)
 }
+
+analyzeOrd <- function(data,cat,val,lev,tit="")
+{
+  newDat <- data %>%
+    select(cat={{cat}},val={{val}}) %>%
+    mutate(factor(cat,levels=lev,ordered = T)) %>%
+    group_by(cat) %>%
+    summarise(Median = median(val,na.rm = T),
+              Q25=quantile(val,prob=0.25,na.rm = T,type=3),
+              Q75=quantile(val,prob=0.75,na.rm = T,type=3))
+  colnames(newDat)[1] <- cat
+  nice(newDat,title=tit)
+
+}
