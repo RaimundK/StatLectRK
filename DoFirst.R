@@ -1,3 +1,3 @@
 install.packages("devtools")
 library(devtools)
-install_github("RaimundK/StatLectRK",force = T1)
+install_github("RaimundK/StatLectRK",force = T)

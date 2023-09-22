@@ -21,10 +21,10 @@ Depends: mosaic,
          REAT,
          gtsummary,
          ggplot2,
-         reshape2
-         likert
-         psych
-         ufs
-         MBESS
+         reshape2,
+         likert,
+         psych,
+         ufs,
+         MBESS,
          GGally
 
